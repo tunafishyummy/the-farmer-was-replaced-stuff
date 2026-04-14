@@ -1,0 +1,22 @@
+def do_grass():
+	if can_harvest():
+		harvest()
+def do_a_carrot():
+	if can_harvest():
+		harvest()
+		plant(Entities.Carrot)
+	if 	get_ground_type() == Grounds.Grassland:
+		till()
+		plant(Entities.Carrot)
+def do_a_tree():
+	if can_harvest():
+			harvest()
+			plant(Entities.tree)
+def do_a_pumpkin():
+	if get_entity_type() == Entities.Grass:
+		harvest()
+		till()
+	plant(Entities.Pumpkin)
+def do_water():
+	if get_water() < 0.25:
+		use_item(Items.Water)
